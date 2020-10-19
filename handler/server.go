@@ -1,4 +1,4 @@
-package main
+package handler
 
 import (
 	"be04gomy/config"
@@ -11,6 +11,17 @@ import (
 type Server struct {
 	Db *sql.DB
 }
+
+func (s *Server) Handle(route string,f func(*Ctx)) {
+	http.HandleFunc(route,func(writer http.ResponseWriter, request *http.Request) {
+		f(&Ctx{
+			Server: s,
+			ResponseWriter: writer,
+			Request: request,
+		})
+	})
+	
+} 
 
 func (s *Server) Listen(port string) {
 	fmt.Println(`listen server at `+port)
