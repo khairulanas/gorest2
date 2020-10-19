@@ -1,0 +1,36 @@
+<html>
+<head>
+	<title>Create New Student</title>
+</head>
+<body>
+<form>
+	<label for="Name">Name</label>
+	<input id="Name" /> <br/>
+	<label for="Nim">NIM</label>
+	<input id="Nim" maxlength="12"/> <br/>
+	<label for="Semester">Semester</label>
+	<input id="Semester" type="number" /> <br/>
+	<input type="button" onclick="doSubmit()" value="submit"/>
+</form>
+<script>
+	async function doSubmit() {
+		let data = {};
+		let keys = ['Name','Nim','Semester'];
+		for(let key of keys) {
+			data[key] = document.getElementById(key).value;
+		}
+		data.Semester = +data.Semester;
+		// TODO: validation
+		let res = await fetch('',{
+			method: 'POST',
+			headers: {
+				'content-type': 'application/json',
+			},
+			body: JSON.stringify(data)
+		})
+		let json = await res.json()
+		console.log(json);
+	}
+</script>
+</body>
+</html>

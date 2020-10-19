@@ -10,6 +10,7 @@ import (
 
 type Server struct {
 	Db *sql.DB
+	ViewsDir string
 }
 
 func (s *Server) Handle(route string,f func(*Ctx)) {
@@ -28,12 +29,13 @@ func (s *Server) Listen(port string) {
 	http.ListenAndServe(port,nil)
 }
 
-func InitServer() *Server {
+func InitServer(viewDir string) *Server {
 	db, err := config.ConnectMysql()
 	if err != nil {
 		log.Fatal(err)
 	}
 	return &Server{
 		Db: db,	
+		ViewsDir: viewDir,
 	}
 }

@@ -7,7 +7,7 @@ import (
 
 type Student struct {
 	Id int64 
-	Nim string
+	Nim string // `json:"nim"`
 	Name string
 	Semester int
 	CreatedAt time.Time
@@ -41,4 +41,24 @@ func SelectAll(db *sql.DB) (students []Student, err error) {
 		students = append(students, s)
 	}
 	return
+}
+
+func Insert(db *sql.DB, m *Student) (err error) {
+	now := time.Now()
+	res, err := db.Exec(`INSERT INTO students(name,nim,semester,created_at,updated_at)
+VALUES(?,?,?,?,?)`,
+	m.Name,
+	m.Nim,
+	m.Semester,
+	now,
+	now)
+	if err !=nil {
+		return err
+	}
+	m.Id, err = res.LastInsertId()
+	if err == nil {
+		m.CreatedAt = now
+		m.UpdatedAt = now
+	}
+	return err
 }

@@ -7,7 +7,7 @@ import (
 
 const PORT = `:7000`
 func main() {
-	server := handler.InitServer()
+	server := handler.InitServer(`views/`)
 	server.Handle(`/guest/student/list`,hGuest.StudentList)
 	server.Handle(`/guest/student/create`,hGuest.StudentCreate)
 	server.Handle(`/guest/student/update`,hGuest.StudentUpdate)
