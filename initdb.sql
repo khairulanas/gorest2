@@ -5,3 +5,11 @@ GRANT ALL PRIVILEGES ON be04.* TO `user04`@`localhost`;
 FLUSH PRIVILEGES; 
 -- mysql -u user04 -p be04
 
+CREATE TABLE students (
+	`id` INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	`nim` VARCHAR(12) NOT NULL,
+	`name` VARCHAR(64) NOT NULL,
+	`semester` SMALLINT NOT NULL,
+	`created_at` DATETIME NOT NULL,
+	`updated_at` DATETIME NOT NULL
+);
