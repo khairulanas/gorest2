@@ -1,12 +1,7 @@
 package main
 
-import (
-	"be04gomy/config"
-	"fmt"
-)
-
+const PORT = `:7000`
 func main() {
-	_, err := config.ConnectMysql()
-	
-	fmt.Println(err)
+	server := InitServer()
+	server.Listen(PORT) 
 }
