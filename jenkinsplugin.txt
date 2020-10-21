@@ -1,0 +1,23 @@
+#sudo wget https://updates.jenkins.io/download/plugins/cloudbees-folder/6.14/cloudbees-folder.hpi
+
+sudo wget https://updates.jenkins.io/download/plugins/monitoring/1.86.0/monitoring.hpi
+sudo wget https://updates.jenkins.io/download/plugins/disk-usage/0.28/disk-usage.hpi
+sudo wget https://updates.jenkins.io/download/plugins/performance/3.18/performance.hpi
+sudo wget https://updates.jenkins.io/latest/perfpublisher.hpi
+sudo wget https://updates.jenkins.io/latest/kubernetes.hpi
+sudo wget https://updates.jenkins.io/latest/swarm.hpi
+sudo wget https://updates.jenkins.io/latest/amazon-ecs.hpi
+sudo wget https://updates.jenkins.io/latest/azure-acs.hpi
+sudo wget https://updates.jenkins.io/latest/test-results-analyzer.hpi
+sudo wget https://updates.jenkins.io/latest/bootstraped-multi-test-results-report.hpi
+sudo wget https://updates.jenkins.io/latest/job-dsl.hpi
+sudo wget https://updates.jenkins.io/latest/build-pipeline-plugin.hpi
+sudo wget https://updates.jenkins.io/latest/jenkins-multijob-plugin.hpi
+sudo wget https://updates.jenkins.io/latest/workflow-aggregator.hpi
+sudo wget https://updates.jenkins.io/latest/scm-api.hpi
+sudo wget https://updates.jenkins.io/latest/git.hpi
+sudo wget https://updates.jenkins.io/latest/github-pullrequest.hpi
+sudo wget 
+sudo wget 
+sudo wget 
+sudo wget 

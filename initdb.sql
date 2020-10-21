@@ -13,3 +13,14 @@ CREATE TABLE students (
 	`created_at` DATETIME NOT NULL,
 	`updated_at` DATETIME NOT NULL
 );
+
+CREATE TABLE antrian (
+	`id` INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	`nomor` int NOT NULL,
+	`status` VARCHAR(64) NOT NULL,
+	`pelanggan` VARCHAR(64) NOT NULL,
+	`teller` VARCHAR(64) NOT NULL,
+	`created_at` DATETIME NOT NULL,
+	`updated_at` DATETIME NOT NULL,
+	`expired_at` DATETIME NOT NULL
+);
